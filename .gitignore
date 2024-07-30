@@ -1,0 +1,25 @@
+
+/node_modules
+/.vscode/
+/.DS_Store
+
+
+# next.js
+/.next
+/out/
+/.vercel
+
+
+
+# production
+/build/
+
+# misc
+.DS_Store
+
+
+
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
