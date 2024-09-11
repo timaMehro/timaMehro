@@ -25,7 +25,7 @@ export default function Home() {
             />
           </div>
         </div>
-
+        <div>Testing</div>
         <div>
           <h1 className="inline-block text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">
             Web Fundamentals
@@ -35,7 +35,7 @@ export default function Home() {
             here.
           </p>
         </div>
-
+        webessentialsjourneywithtima
         <div className="flex gap-6">
           <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
             <h2 className="text-xl font-semibold mb-2 text-blue-800">
