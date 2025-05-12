@@ -1,0 +1,14 @@
+name: Continuous integration
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: 0 14 * * 0 # Every Sunday, at midnight AEST
+
+
+jobs:
+  ci:
+    name: TimaMehro
+    runs-on: ubuntu-latest
+     
