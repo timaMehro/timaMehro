@@ -31,5 +31,9 @@ jobs:
         run: npm run build
 
         # show the contents of the dist directory
-      - name: Show dist contents
-        run: ls -R artifacts/next/dist
+      - name: Show top-level build directory
+        run: |
+          echo "Listing artifacts/next:"
+          ls artifacts/next
+          echo "Listing artifacts/next/dist:"
+          ls artifacts/next/dist
