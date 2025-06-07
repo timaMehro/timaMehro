@@ -23,3 +23,4 @@ jobs:
       - name: Sync files to S3
         run: |
           aws s3 sync ./artifacts/next/dist s3://timamehro.com --delete
+          
