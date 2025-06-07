@@ -9,6 +9,39 @@ on:
 
 jobs:
   ci:
-    name: TimaMehro
+    name:  TimaMehro CI
     runs-on: ubuntu-latest
-     
+
+    steps:
+      # pull (checkout) your repository’s code into the CI runner
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # install Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Specify the Node.js version you want to use
+
+      # install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # run tests
+      - name: Run tests
+        run: npm test
+
+      # build the project
+      - name: Build project
+        run: npm run build
+
+      # deploy to S3
+      - name: Deploy to S3
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-1'  # Replace with your AWS region
+      - name: Sync files to S3
+        run: |
+          aws s3 sync ./artifacts/next/dist s3://timamehro.com --delete

@@ -1,7 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  distDir: "artifacts/next/dist",
+  output: "standalone",
+  // add redirect
+  redirects: async () => {
+    return [
+      {
+        source: "/",
+        destination: "/",
+        permanent: true,
+      },
+    ]
+  },
 
-export default nextConfig;
+  //  TODO: add BundleAnalyzer
+}
+
+export default nextConfig
