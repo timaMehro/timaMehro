@@ -29,3 +29,7 @@ jobs:
       # build the project
       - name: Build project
         run: npm run build
+
+        # show the contents of the dist directory
+      - name: Show dist contents
+        run: ls -R artifacts/next/dist
