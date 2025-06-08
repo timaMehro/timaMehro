@@ -30,10 +30,3 @@ jobs:
       - name: Build project
         run: npm run build
 
-        # show the contents of the dist directory for debugging error
-      - name: Show top-level build directory
-        run: |
-          echo "Listing .next:"
-          ls next
-          echo "Listing next/dist:"
-          ls next/dist
