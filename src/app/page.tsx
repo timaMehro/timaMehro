@@ -8,7 +8,7 @@ export default function Home() {
           Tima Mehro
         </h1>
         <p className="text-gray-600 text-sm sm:text-base">
-          Chermside, Brisbane, Australia | |{" "}
+          Chermside, Brisbane, Australia |{" "}
           <a href="mailto:Timamehro@gmail.com" className="text-blue-600 hover:underline">
             Timamehro@gmail.com
           </a>{" "}
