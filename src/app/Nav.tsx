@@ -6,7 +6,7 @@ export default function Nav() {
 
   const menuItems = [
     { label: "Home", href: "#home", color: "text-indigo-300" },
-    // { label: "Articles", href: "#articles", color: "text-pink-300" },
+    // { label: "React", href: "/react", color: "text-pink-300" },
     // { label: "Books", href: "#books", color: "text-yellow-300" },
     // { label: "Lifestyle", href: "#lifestyle", color: "text-green-300" },
     // { label: "Photography", href: "#Photography", color: "text-purple-300" },

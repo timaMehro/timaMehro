@@ -12,7 +12,7 @@ export default function Home() {
       {" "}
       <main
         className="min-h-screen bg-black  md:w-full
-     text-white font-[family-name:var(--font-geist-sans)] md:px-60 md:py-8 px-8 py-5"
+     text-white font-[family-name:var(--font-geist-sans)] md:px-30 md:py-8 px-8 py-5"
       >
         <Nav />
         <ProfileTitle />
