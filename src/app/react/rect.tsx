@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const subjects = [
   {
@@ -19,9 +19,9 @@ const subjects = [
     color: "purple",
     articles: ["Performance Optimization", "Server-Side Rendering", "Testing"],
   },
-];
+]
 
-export default function ArticlePage() {
+export default function ReactPage() {
   return (
     <main className="min-h-screen bg-gradient-to-tr from-gray-900 via-indigo-900 to-black px-6 py-12 text-white">
       <div className="max-w-7xl mx-auto">
@@ -29,7 +29,6 @@ export default function ArticlePage() {
         <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 mb-16 tracking-wide animate-fade-in">
           React Mastery Hub
         </h1>
-
         {/* Articles Section */}
         <section id="articles">
           <h2 className="text-3xl font-bold text-purple-300 mb-12 text-center animate-fade-in delay-200">
@@ -45,8 +44,8 @@ export default function ArticlePage() {
                   rounded-3xl p-8 shadow-xl transition-transform duration-300
                   hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]
                   animate-fade-in-up
-                  bg-gradient-to-br from-${subject.color}-500 to-${subject.color}-700
-                  ring-1 ring-${subject.color}-300/30
+                   ring-1 ring-${subject.color}-500
+
                 `}
               >
                 <div>
@@ -100,5 +99,5 @@ export default function ArticlePage() {
         `}
       </style>
     </main>
-  );
+  )
 }

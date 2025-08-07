@@ -2,6 +2,16 @@ import type { Subjects } from "./types"
 
 export const subjects: Subjects = [
   {
+    id: 6,
+    title: "Test",
+    color: "indigo",
+    articles: [
+      { id: 1, title: "JavaScript Unit Testing" },
+      { id: 2, title: "Different Testing Types for Frontend Applications" },
+      // { id: 2, title: "React Component Testing with RTL" },
+    ],
+  },
+  {
     id: 1,
     title: "React",
     color: "pink",
@@ -10,7 +20,7 @@ export const subjects: Subjects = [
       { id: 2, title: "useActionState" },
       { id: 3, title: "React DOM: <form> Actions" },
       { id: 4, title: "React DOM: New hook: useFormStatus" },
-      { id: 5, title: "New hook: useOptimistic"},
+      { id: 5, title: "New hook: useOptimistic" },
       { id: 6, title: "New hook: useOptimistic" },
       { id: 7, title: "New API: use " },
       { id: 8, title: "New React DOM Static APIs" },
@@ -56,16 +66,6 @@ export const subjects: Subjects = [
   //     { id: 1, title: "Ensuring Type Safety in React" },
   //     { id: 2, title: "Advanced Utility Types" },
   //     { id: 3, title: "API Type Handling Best Practices" },
-  //   ],
-  // },
-  // {
-  //   id: 6,
-  //   title: "Testing",
-  //   color: "yellow",
-  //   articles: [
-  //     { id: 1, title: "Unit Testing with Vitest" },
-  //     { id: 2, title: "React Component Testing with RTL" },
-  //     { id: 3, title: "Mocking API Calls in Tests" },
   //   ],
   // },
 ]
