@@ -69,7 +69,7 @@ function MatcherCategorie() {
   return (
     <div className="max-w-full px-6 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-        {matcherCategories.map(({ id, title, description, matchers, color }, idx) => (
+        {matcherCategories.map(({ id, title, description, matchers, color }) => (
           <div
             key={id}
             className="relative flex flex-col p-6 rounded-lg border border-gray-600 hover:shadow-lg transition-shadow duration-300 cursor-default"

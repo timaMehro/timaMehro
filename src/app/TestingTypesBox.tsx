@@ -37,7 +37,7 @@ export default function TestingTypesBox() {
   return (
     <>
       <div className="flex flex-wrap justify-center gap-y-12 md:gap-x-10 px-6">
-        {testingTypes.map(({ id, title, description, color, type, bestFor }) => (
+        {testingTypes.map(({ id, title, description, type, bestFor }) => (
           <div key={id} className="flex flex-col items-center w-72 text-center space-y-3">
             {/* Circle Graphic */}
             <div className="relative w-full h-32 flex items-center justify-center">
