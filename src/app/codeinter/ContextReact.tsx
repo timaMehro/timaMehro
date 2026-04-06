@@ -23,7 +23,7 @@ interface Props {
 }
 
 export default function ContextTest({ children }: Props) {
-  const [theme, setTheme] = useState<Theme2>("light")
+  const [theme, setTheme] = useState<Them2["theme"]>("light")
 
   function toggleTheme() {
     setTheme((prev) => (prev == "dark" ? "light" : "dark"))
