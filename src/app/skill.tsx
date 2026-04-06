@@ -1,36 +1,72 @@
+const skillCategories = [
+  {
+    label: "Languages & Frameworks",
+    icon: "{ }",
+    skills: ["JavaScript (ES6+)", "TypeScript", "React 19", "Next.js 15", "Vue.js", "Aurelia"],
+  },
+  {
+    label: "Styling",
+    icon: "\u2728",
+    skills: ["Tailwind CSS 4", "Ant Design", "Less", "Bootstrap", "CSS3", "HTML5"],
+  },
+  {
+    label: "Design",
+    icon: "\u25B3",
+    skills: ["Figma", "Photoshop"],
+  },
+  {
+    label: "Tools & Testing",
+    icon: "\u2713",
+    skills: ["Webpack", "Vitest", "Storybook 8", "React Testing Library", "Git"],
+  },
+  {
+    label: "API & Performance",
+    icon: "\u21C6",
+    skills: ["Mapbox", "REST APIs", "SWR", "Lazy Loading"],
+  },
+  {
+    label: "Backend",
+    icon: "\u25A0",
+    skills: ["C#", "ASP.NET Core", "SQL Server", "MySQL"],
+  },
+]
+
 export default function Skills() {
   return (
-    <>
-      <section className="animate-fade-in-up [animation-delay:0.2s] mt-12">
-        <h3 className="text-2xl font-semibold text-indigo-700 mb-6">Technical Skills</h3>
-        <div className="gap-6 text-gray-400 leading-relaxed text-[15px]">
-          <div className="space-y-3">
-            <p>
-              <span className="font-semibold text-white">Languages &amp; Frameworks:</span>{" "}
-              JavaScript (ES6+), TypeScript, React 19, Next.js 15, Vue.js, Aurelia
-            </p>
-            <p>
-              <span className="font-semibold text-white">Styling:</span> Tailwind CSS 4, Ant Design,
-              Less, Bootstrap, CSS3, HTML5
-            </p>
-            <p>
-              <span className="font-semibold text-white">Design:</span> Figma, Photoshop
-            </p>
-            <p>
-              <span className="font-semibold text-white">Tools &amp; Testing:</span> Webpack,
-              Vitest, Storybook 8, React Testing Library, Git
-            </p>
-            <p>
-              <span className="font-semibold text-white">API &amp; Performance:</span> Mapbox, REST
-              APIs, SWR, lazy loading
-            </p>
-            <p>
-              <span className="font-semibold text-white">Backend:</span> C#, ASP.NET Core, SQL
-              Server, MySQL
-            </p>
+    <section className="animate-fade-in-up [animation-delay:0.2s] mt-14">
+      <div className="flex items-center gap-3 mb-8">
+        <div className="h-px flex-1 bg-gradient-to-r from-indigo-500/50 to-transparent" />
+        <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
+          Technical Skills
+        </h3>
+        <div className="h-px flex-1 bg-gradient-to-l from-indigo-500/50 to-transparent" />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {skillCategories.map((cat) => (
+          <div
+            key={cat.label}
+            className="group p-5"
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-indigo-400 text-sm font-mono">{cat.icon}</span>
+              <h4 className="text-sm font-semibold text-white">{cat.label}</h4>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {cat.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1
+                             text-xs text-gray-300 transition-colors duration-200
+                             group-hover:border-indigo-500/20 group-hover:text-gray-200"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </>
+        ))}
+      </div>
+    </section>
   )
 }

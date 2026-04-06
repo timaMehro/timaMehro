@@ -47,3 +47,24 @@ body {
 .animated-blob {
   animation: morph 8s ease-in-out infinite;
 }
+
+/* AI button spinning border */
+@property --ai-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes ai-spin {
+  to {
+    --ai-angle: 360deg;
+  }
+}
+
+.ai-btn-spin {
+  animation: ai-spin 3s linear infinite;
+}
+
+.ai-btn-glow:hover {
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.3), 0 0 40px rgba(192, 132, 252, 0.15);
+}

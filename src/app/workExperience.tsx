@@ -1,12 +1,17 @@
 export default function WorkExperience() {
   const jobs = [
     {
+      company: "Autoguru",
+      role: "Front End Developer",
+      location: "QLD, Australia",
+      period: "Oct 2025 – Present",
+      current: true,
+    },
+    {
       company: "Betsecure",
       role: "Front End Web Developer",
       location: "QLD, Australia",
-      period: "2022 – Present",
-      current: true,
-      isStart: true,
+      period: "2022 – 2025",
     },
     {
       company: "Kidsoft",
@@ -29,35 +34,50 @@ export default function WorkExperience() {
   ]
 
   return (
-    <section className="mt-8">
-      <h3 className="text-2xl font-semibold text-indigo-500 mb-10 ">Professional Experience</h3>
+    <section className="mt-14 animate-fade-in-up [animation-delay:0.4s]">
+      <div className="flex items-center gap-3 mb-12">
+        <div className="h-px flex-1 bg-gradient-to-r from-indigo-500/50 to-transparent" />
+        <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
+          Professional Experience
+        </h3>
+        <div className="h-px flex-1 bg-gradient-to-l from-indigo-500/50 to-transparent" />
+      </div>
 
-      <div className="relative flex justify-between items-center  pb-12 overflow-x-auto no-scrollbar">
+      <div className="relative overflow-x-auto no-scrollbar">
         {/* Timeline horizontal line */}
-        <div className="absolute top-11 left-0 right-0 h-0.5 bg-indigo-600 z-0"></div>
-        <span className="absolute top-[39px] left-0 w-3 h-3 rounded-full bg-indigo-600  z-10"></span>
+        <div className="absolute top-[11px] left-0 right-0 h-px bg-indigo-500/30 z-0" />
+        {/* Active segment glow for current role */}
+        <div className="absolute top-[10px] left-0 w-1/5 h-[3px] bg-gradient-to-r from-emerald-400 to-indigo-500/50 z-0 rounded-full" />
 
-        {jobs.map((job, index) => (
-          <div key={index} className="relative flex flex-col items-center flex-shrink-0">
-            <span className="mb-4 text-xs font-mono text-indigo-300">{job.period}</span>
+        <div className="grid grid-cols-5 gap-6">
+          {jobs.map((job, index) => (
+            <div key={index} className="relative group">
+              {/* Dot */}
+              <div className="relative z-10 mb-6">
+                {job.current ? (
+                  <div className="relative">
+                    <div className="absolute -inset-2 rounded-full bg-emerald-400/20 animate-pulse" />
+                    <div className="w-[23px] h-[23px] rounded-full bg-emerald-400 ring-4 ring-black" />
+                  </div>
+                ) : (
+                  <div className="w-[23px] h-[23px] rounded-full border-2 border-indigo-500/40 bg-black group-hover:border-indigo-400 transition-colors duration-300" />
+                )}
+              </div>
 
-            {/* Timeline dot */}
-            <div
-              className={`z-10 rounded-full border-2 border-white w-6 h-6
-                ${job.isStart ? "bg-green-500 animate-pulse border-none " : "bg-indigo-500"}
-              `}
-            ></div>
-
-            {/* Card */}
-            <div className="mt-4 ">
-              <div className="bg-gray-800 text-white rounded-lg shadow-lg p-4 w-full">
-                <h4 className="text-lg font-semibold text-indigo-300">{job.company}</h4>
-                <p className="text-sm text-gray-400">{job.role}</p>
-                <p className="text-xs text-gray-500">{job.location}</p>
+              {/* Content */}
+              <div>
+                <span className="text-[11px] font-mono text-gray-500 group-hover:text-indigo-400/70 transition-colors duration-300">
+                  {job.period}
+                </span>
+                <h4 className="text-base font-semibold text-white mt-1.5 group-hover:text-indigo-300 transition-colors duration-300">
+                  {job.company}
+                </h4>
+                <p className="text-sm text-gray-400 mt-0.5">{job.role}</p>
+                <p className="text-xs text-gray-600 mt-0.5">{job.location}</p>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

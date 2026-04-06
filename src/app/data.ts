@@ -69,3 +69,182 @@ export const subjects: Subjects = [
   //   ],
   // },
 ]
+
+export interface TreeNode {
+  id: number
+  name: string
+  isFolder: boolean
+  subTree: TreeNode[]
+}
+
+export const treeData = [
+  {
+    id: 1,
+    name: "This is the first",
+    isFolder: true,
+    subTree: [
+      {
+        id: 2,
+        name: "Folder 1",
+        isFolder: true,
+        subTree: [
+          {
+            id: 3,
+            name: "File 1-1",
+            isFolder: false,
+            subTree: [],
+          },
+          {
+            id: 4,
+            name: "Folder 1-2",
+            isFolder: true,
+            subTree: [
+              {
+                id: 5,
+                name: "File 1-2-1",
+                isFolder: false,
+                subTree: [],
+              },
+              {
+                id: 6,
+                name: "Folder 1-2-2",
+                isFolder: true,
+                subTree: [
+                  {
+                    id: 7,
+                    name: "File 1-2-2-1",
+                    isFolder: false,
+                    subTree: [],
+                  },
+                  {
+                    id: 8,
+                    name: "Folder 1-2-2-2",
+                    isFolder: true,
+                    subTree: [
+                      {
+                        id: 9,
+                        name: "File 1-2-2-2-1",
+                        isFolder: false,
+                        subTree: [],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 10,
+        name: "Folder 2",
+        isFolder: true,
+        subTree: [
+          {
+            id: 11,
+            name: "File 2-1",
+            isFolder: false,
+            subTree: [],
+          },
+          {
+            id: 12,
+            name: "Folder 2-2",
+            isFolder: true,
+            subTree: [
+              {
+                id: 13,
+                name: "File 2-2-1",
+                isFolder: false,
+                subTree: [],
+              },
+              {
+                id: 14,
+                name: "Folder 2-2-2",
+                isFolder: true,
+                subTree: [
+                  {
+                    id: 15,
+                    name: "File 2-2-2-1",
+                    isFolder: false,
+                    subTree: [],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 16,
+        name: "File at root (first)",
+        isFolder: false,
+        subTree: [],
+      },
+    ],
+  },
+  {
+    id: 17,
+    name: "This is the second",
+    isFolder: true,
+    subTree: [
+      {
+        id: 18,
+        name: "Folder A",
+        isFolder: true,
+        subTree: [
+          {
+            id: 19,
+            name: "File A-1",
+            isFolder: false,
+            subTree: [],
+          },
+          {
+            id: 20,
+            name: "Folder A-2",
+            isFolder: true,
+            subTree: [
+              {
+                id: 21,
+                name: "File A-2-1",
+                isFolder: false,
+                subTree: [],
+              },
+              {
+                id: 22,
+                name: "Folder A-2-2",
+                isFolder: true,
+                subTree: [
+                  {
+                    id: 23,
+                    name: "File A-2-2-1",
+                    isFolder: false,
+                    subTree: [],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 24,
+        name: "Folder B",
+        isFolder: true,
+        subTree: [
+          {
+            id: 25,
+            name: "File B-1",
+            isFolder: false,
+            subTree: [],
+          },
+        ],
+      },
+      {
+        id: 26,
+        name: "File at root (second)",
+        isFolder: false,
+        subTree: [],
+      },
+    ],
+  },
+]

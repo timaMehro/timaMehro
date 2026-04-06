@@ -8,27 +8,43 @@ export default function Nav() {
     { label: "Home", href: "/", color: "text-indigo-300" },
     { label: "Testing", href: "/test", color: "text-purple-300" },
     { label: "React", href: "/react", color: "text-pink-300" },
-    // { label: "Books", href: "#books", color: "text-yellow-300" },
-    // { label: "Lifestyle", href: "#lifestyle", color: "text-green-300" },
-    // { label: "Photography", href: "#Photography", color: "text-purple-300" },
+    { label: "AI + Frontend", href: "/ai", color: "text-emerald-300" },
   ]
   return (
-    <>
-      <div className="relative z-50 mt-6">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center text-white font-[family-name:var(--font-geist-sans)]">
-            <Image
-              src="/finalLogo02.png"
-              alt="Tima Mehro Logo"
-              width={40}
-              height={40}
-              className="inline-block mr-1 md:w-10 w-8 "
-            />
-            <h1 className="text-base md:text-4xl font-bold bg-[linear-gradient(to_right,_#a5b4fc,_#f9a8d4,_#fde68a,_#86efac,_#d8b4fe)] bg-clip-text text-transparent">
-              {/* <h1 className=" font-bold bg-gradient-to-r from-red-200 via-pink-300 via to-yellow-300"> */}
-              MehroWeb
-            </h1>
-          </div>
+    <div className="relative z-50 pt-6">
+      <div className="flex justify-between items-center">
+        <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <Image
+            src="/finalLogo02.png"
+            alt="Tima Mehro Logo"
+            width={40}
+            height={40}
+            className="inline-block md:w-10 w-8"
+          />
+          <h1 className="text-base md:text-2xl font-bold bg-[linear-gradient(to_right,_#a5b4fc,_#f9a8d4,_#fde68a,_#86efac,_#d8b4fe)] bg-clip-text text-transparent">
+            MehroWeb
+          </h1>
+        </a>
+        <div className="flex items-center gap-3">
+          {/* AI Button */}
+          <a
+            href="/ai"
+            className="group relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-white overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95 ai-btn-glow"
+          >
+            <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_var(--ai-angle),#818cf8,#c084fc,#f472b6,#818cf8)] p-px ai-btn-spin">
+              <span className="flex h-full w-full rounded-full bg-black" />
+            </span>
+            <span className="relative flex items-center gap-1.5">
+              <span className="inline-block animate-bounce [animation-duration:2s]">&gt;_</span>
+              <span>AI</span>
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              </span>
+            </span>
+          </a>
+
+          {/* Hamburger */}
           <button
             className="flex flex-col gap-1.5 group p-2"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -40,22 +56,22 @@ export default function Nav() {
             <span className="w-6 h-0.5 bg-green-400 rounded group-hover:bg-green-300 transition" />
           </button>
         </div>
-
-        {menuOpen && (
-          <nav className="absolute top-12 right-0 bg-gray-900 border border-gray-700 rounded-md shadow-xl w-56 p-4 space-y-4 animate-fade-in-up">
-            {menuItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`block text-lg font-medium ${item.color} hover:underline transition`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        )}
       </div>
-    </>
+
+      {menuOpen && (
+        <nav className="absolute top-14 right-0 bg-black/90 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl w-48 p-4 space-y-3 animate-fade-in-up">
+          {menuItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className={`block text-sm font-medium ${item.color} hover:underline transition`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      )}
+    </div>
   )
 }
