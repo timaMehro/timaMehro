@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Nav() {
@@ -13,7 +14,7 @@ export default function Nav() {
   return (
     <div className="relative z-50 pt-6">
       <div className="flex justify-between items-center">
-        <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image
             src="/finalLogo02.png"
             alt="Tima Mehro Logo"
@@ -24,7 +25,7 @@ export default function Nav() {
           <h1 className="text-base md:text-2xl font-bold bg-[linear-gradient(to_right,_#a5b4fc,_#f9a8d4,_#fde68a,_#86efac,_#d8b4fe)] bg-clip-text text-transparent">
             MehroWeb
           </h1>
-        </a>
+        </Link>
         <div className="flex items-center gap-3">
           {/* AI Button */}
           <a
