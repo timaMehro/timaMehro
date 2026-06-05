@@ -2,21 +2,17 @@
 import React, { useState } from "react"
 import { treeData, TreeNode } from "../data"
 
-interface Pops {
-  item: TreeNode
-}
-
 export default function Recursive() {
   const [isExpand, setIsexpand] = useState(false)
 
-  function TreeExtendede({ subTree }) {
+  function TreeExtendede({ subTree }: { subTree: TreeNode }) {
     return (
       <li key={subTree.name} className="pl-4">
         <p onClick={() => setIsexpand((isExpand) => !isExpand)}>{subTree.name}</p>
 
         {isExpand && subTree.subTree.length > 0 && (
           <ul className="list-disc">
-            {subTree.subTree.map((item2, index2) => {
+            {subTree.subTree.map((item2) => {
               return <TreeExtendede subTree={item2} key={item2.name} />
             })}
           </ul>

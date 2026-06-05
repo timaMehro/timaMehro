@@ -16,7 +16,7 @@ const animalData = [
 ]
 
 const LabelFilter = () => {
-  const [filtred, setFiltered] = useState(animalData)
+  const [filtred] = useState(animalData)
 
   // function getFilteredArry(myName){
   //  const  flteredAnimal= animalData.filter((item)=> item.name === myName )

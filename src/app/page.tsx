@@ -2,7 +2,6 @@
 import Articles from "./articles"
 import Nav from "./Nav"
 import ProfileTitle from "./profileTitle"
-import Counter from "./codeinter/Counter"
 import Skills from "./skill"
 import Summary from "./summary"
 import WorkExperience from "./workExperience"
